@@ -9,15 +9,12 @@
     <header>
         <h1><a href="/">Django Work Blog</a></h1>
     </header>
-    <article>
-        <time>published: 14.06.2014, 12:14</time>
-        <h2><a href="">My first post</a></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolore itaque incidunt, voluptatem tempora fugit autem quasi cum, blanditiis hic dolorem minima dolorum sapiente facere laborum dolor numquam sequi non.</p>
-    </article>
-    <article>
-        <time>published: 14.06.2014, 12:14</time>
-        <h2><a href="">My second post</a></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolore itaque incidunt, voluptatem tempora fugit autem quasi cum, blanditiis hic dolorem minima dolorum sapiente facere laborum dolor numquam sequi non.</p>
-    </article>
+    {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text }}</p>
+        </article>
+    {% endfor %}
 </body>
 </html>
